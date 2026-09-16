@@ -19,10 +19,17 @@ func _process(delta):
 	health_label.text = "Vida: %d" % health
 
 
-func _on_damage_button_pressed() -> void:
+func tirar_vida():
 	health -= 10
 	health = max(0, health)
+
+func _on_damage_button_pressed() -> void:
+	tirar_vida()
 
 func _on_heal_button_pressed() -> void:
 	health += 10
 	health = min(100, health)
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == get_node("../../Player"):
+		tirar_vida()
