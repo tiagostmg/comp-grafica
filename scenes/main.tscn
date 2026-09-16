@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://83bd3e5f0dk2" path="res://sprites/kenney_pixel-platformer/Tiles/tile_0068.png" id="5_tbgi4"]
 
 [ext_resource type="Texture2D" path="res://sprites/kenney_pixel-platformer/Tiles/tile_0044.png" id="6_heart"]
+[ext_resource type="Script" path="res://scenes/camera.gd" id="7_camera"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ir6a"]
 size = Vector2(0.35999998, 0.35999978)
@@ -355,10 +356,11 @@ shape = SubResource("RectangleShape2D_3ir6a")
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=2014792027]
 texture = ExtResource("2_tefeu")
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=965263905]
-position = Vector2(0, -100)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=965263905]
+position = Vector2(0, -285)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+script = ExtResource("7_camera")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=755134406]
 layer = -1
